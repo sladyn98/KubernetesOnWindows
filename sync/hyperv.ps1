@@ -9,6 +9,10 @@ Write-Output "### Using dism: enabling Hyper-V"
 
 dism -online -enable-feature -featurename:Microsoft-Hyper-V -all -NoRestart
 
+Write-Output "### Using dism: disabling Hyper-V"
+
+dism -online -disable-feature -featurename:Microsoft-Hyper-V-Online -NoRestart
+
 Write-Output "### Installing Containers"
 
 Install-WindowsFeature Containers
